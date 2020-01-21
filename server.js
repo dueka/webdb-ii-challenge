@@ -1,10 +1,11 @@
 const express = require("express");
-
+const helmet = require("helmets");
 const CarsRouter = require("./cars-dealer/cars-router");
 
 const server = express();
 
 server.use(express.json());
+server.use(helmet());
 
 server.use("/api/cars", CarsRouter);
 
